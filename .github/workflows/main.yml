@@ -53,7 +53,7 @@ jobs:
       - name: Compile
         run: |
           cd istoreos
-          make SIGNED_IMAGES=0 -j$(nproc) V=s  # V=s 输出详细日志，便于排错
+          make SIGNED_IMAGES=0 -j$(nproc) V=s CONFIG_DEBUG_INFO_BTF=n # V=s 输出详细日志，便于排错
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
